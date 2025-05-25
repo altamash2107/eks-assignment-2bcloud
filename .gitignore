@@ -1,0 +1,56 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+.env
+.venv/
+venv/
+pip-wheel-metadata/
+*.sqlite3
+
+
+
+
+# ===== Terraform =====
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# ===== Docker =====
+*.tar
+.dockerignore
+**/Dockerfile.*.bak
+
+# Docker volumes & build artifacts
+docker-volume/
+docker-data/
+**/.docker/
+
+
+# Ignore local Git config
+.gitconfig.local
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore VS Code settings
+.vscode/
+
+
+
+

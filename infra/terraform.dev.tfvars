@@ -43,7 +43,7 @@ disk_size                =  20
 addons                   = {
     vpc-cni      = "v1.19.5-eksbuild.3",
     kube-proxy   = "v1.28.15-eksbuild.20",
-    coredns      = "v1.10.1-eksbuild.10",
+    coredns      = "v1.10.1-eksbuild.18",
   }
 
 
