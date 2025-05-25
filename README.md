@@ -92,6 +92,31 @@ This folder contains the Helm chart used to deploy the application on EKS.
 
 ---
 
+
+## Verify the Metrics Server is Running
+
+Run these commands to verify the Metrics Server deployment and check node and pod metrics:
+
+```bash
+kubectl get deployment metrics-server -n kube-system
+kubectl top nodes
+kubectl top pods
+```
+Without the Metrics Server, the Horizontal Pod Autoscaler (HPA) will not function correctly.
+
+For more information, see the [Kubernetes Metrics Server documentation](https://github.com/kubernetes-sigs/metrics-server).
+
+
+## Kubernetes Metrics Server for HPA
+
+The Horizontal Pod Autoscaler (HPA) relies on the Kubernetes Metrics Server to fetch resource usage metrics (CPU, memory) for scaling decisions.
+
+**Important:** Before deploying HPA, ensure the Metrics Server is installed:
+
+```bash
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+```
+
 ## GitHub Actions Workflow (`.github/workflows/`)
 
 This GitHub Actions workflow automates the full CI/CD pipeline:
