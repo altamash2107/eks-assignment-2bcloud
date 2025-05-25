@@ -168,5 +168,7 @@ Here are a few enhancements that can be made:
 - Enable centralized logging and monitoring with AWS CloudWatch, Prometheus, and Grafana  
 - Add validation and linting steps for Helm charts and Dockerfiles  
 - Implement security best practices such as image scanning and least-privilege IAM roles
+- Use Argo CD for GitOps-based continuous delivery and better deployment management
+
 
 
