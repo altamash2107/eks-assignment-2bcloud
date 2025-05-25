@@ -6,7 +6,7 @@ def create_app():
 
     @app.route("/", methods=["GET"])
     def home():
-        return jsonify(message="Hello World"), 200
+        return jsonify(message="Hello World Test123"), 200
 
     @app.route("/healthz", methods=["GET"])
     def health_check():
