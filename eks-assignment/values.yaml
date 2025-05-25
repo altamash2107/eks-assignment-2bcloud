@@ -1,0 +1,41 @@
+replicaCount: 2
+
+image:
+  repository: 633154839293.dkr.ecr.us-east-1.amazonaws.com/dev-backend-eks-assignment-repo
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 80
+
+containerPort: 3000
+
+# env:
+#   - name: FLASK_ENV
+#     value: production
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "250m"
+    memory: "256Mi"
+
+livenessProbe:
+  path: /healthz
+  initialDelaySeconds: 10
+  periodSeconds: 10
+
+readinessProbe:
+  path: /healthz
+  initialDelaySeconds: 5
+  periodSeconds: 5
+
+
+hpa:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 50
