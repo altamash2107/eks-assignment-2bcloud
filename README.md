@@ -19,6 +19,10 @@ Before you begin, make sure the following are installed and configured:
 
 All infrastructure code is located in the `infra/` directory.
 
+### Note on Terraform Automation
+Currently, Terraform provisioning is executed manually. To fully align with CI/CD best practices, automating infrastructure provisioning via GitHub Actions is a planned enhancement.
+
+
 ### Steps to Setup Infrastructure
 
 1. **Create a new Terraform workspace**
@@ -91,6 +95,15 @@ This folder contains the Helm chart used to deploy the application on EKS.
 - `values.yaml` - Parameterizes image, replica count, and resource limits
 
 ---
+### Horizontal Pod Autoscaler in Action
+
+The HPA scales pods based on CPU usage. Below is a sample output showing how it automatically scales up:
+
+#### HPA Status & Metrics::
+
+![HPA Status](images/hpa.png)
+
+
 
 
 ## Verify the Metrics Server is Running
