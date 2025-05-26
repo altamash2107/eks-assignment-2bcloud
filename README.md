@@ -140,6 +140,26 @@ This GitHub Actions workflow automates the full CI/CD pipeline:
 
 ---
 
+## 🔐 GitHub Secrets Required
+
+Before running the GitHub Actions workflow, ensure the following secrets are configured in your repository:
+
+| Secret Name             | Description                                                                 |
+|--------------------------|-----------------------------------------------------------------------------|
+| `AWS_ACCESS_KEY_ID`      | Access key ID of your AWS IAM user                                          |
+| `AWS_SECRET_ACCESS_KEY`  | Secret access key of your AWS IAM user                                      |
+| `AWS_REGION`             | AWS region where your EKS cluster and ECR repository are located (e.g., `us-east-1`) |
+| `ECR_REGISTRY`           | Amazon ECR registry URI (e.g., `123456789012.dkr.ecr.us-east-1.amazonaws.com`) |
+| `ECR_REPOSITORY`         | Name of your ECR repository (e.g., `flask-app`)                             |
+| `CLUSTER_NAME`           | Name of your EKS cluster (e.g., `my-eks-cluster`)                           |
+
+To add these secrets:
+
+1. Go to your GitHub repository.
+2. Click on `Settings` → `Secrets and variables` → `Actions`.
+3. Click `New repository secret` and add each one with its corresponding value.
+
+
 ### GitHub Actions Workflow Explanation
 
 This GitHub Actions workflow automates building and deploying the Python Flask app to an AWS EKS cluster whenever code is pushed to the `main` branch. The workflow performs these key steps:
